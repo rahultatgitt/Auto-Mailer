@@ -16,22 +16,22 @@ let transporter = nodemailer.createTransport({
 });
 
 // Function to send OTP
-function sendOTP(email, otp) {
-  let mailOptions = {
+// function sendOTP(email, otp) {
+//   let mailOptions = {
 
-    from: 'your-email@gmail.com', // sender address
-    to: email,
-    subject: 'Your OTP Code',
-    text: `Your OTP code is ${otp}. Please use this code to complete your authentication.` // Plain text body
-  };
+//     from: 'your-email@gmail.com', // sender address
+//     to: email,
+//     subject: 'Your OTP Code',
+//     text: `Your OTP code is ${otp}. Please use this code to complete your authentication.` // Plain text body
+//   };
 
-  transporter.sendMail(mailOptions, (error, info) => {
-    if (error) {
-      return console.log(error);
-    }
-    console.log('Message sent: %s', info.messageId);
-  });
-}
+//   transporter.sendMail(mailOptions, (error, info) => {
+//     if (error) {
+//       return console.log(error);
+//     }
+//     console.log('Message sent: %s', info.messageId);
+//   });
+// }
 
 
 // Function to send the OTP via email
@@ -59,4 +59,4 @@ function sendOTP(email) {
   
 
 // Call the sendOTP function with the recipient's email
-sendOTP('seriesmovie71@gmail.com, rahul.usp@outlook.com');
+sendOTP(' nikhilsinha198@gmail.com');
