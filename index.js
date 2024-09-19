@@ -1,6 +1,7 @@
 const nodemailer = require('nodemailer');
 const keys = require('./keys.js');
 const generateOTP = require('./utils/otp.js');
+const cron = require('node-cron');
 
 let username = keys.user;
 let password = keys.pass;
@@ -56,7 +57,12 @@ function sendOTP(email) {
   });
 }
 
+cron.schedule('*/1 * * * *', () => {
+  console.log('Running scheduled task...');
+  sendOTP(' nikhilsinha198@gmail.com');
+});
+
   
 
 // Call the sendOTP function with the recipient's email
-sendOTP(' nikhilsinha198@gmail.com');
+// sendOTP(' nikhilsinha198@gmail.com');
