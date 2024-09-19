@@ -2,6 +2,8 @@ const nodemailer = require('nodemailer');
 const keys = require('./keys.js');
 const generateOTP = require('./utils/otp.js');
 const cron = require('node-cron');
+const mongoose = require('mongoose');
+const otp = require('./otpSchema.js');
 
 let username = keys.user;
 let password = keys.pass;
@@ -15,6 +17,12 @@ let transporter = nodemailer.createTransport({
     pass: password   
   }
 });
+
+mongoose.connect('mongodb://localhost:27017/mailScheduler');
+
+
+
+
 
 // Function to send OTP
 // function sendOTP(email, otp) {
